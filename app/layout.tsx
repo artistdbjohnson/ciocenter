@@ -28,11 +28,14 @@ export const metadata: Metadata = {
 
 const themeBoot = `(function(){try{var t=localStorage.getItem("cio-theme");if(t==="dark")document.documentElement.classList.add("dark");}catch(e){}})();`;
 
+const arriveBoot = `(function(){try{if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;if(sessionStorage.getItem("cio-arrive")==="1")return;document.documentElement.classList.add("cio-arrive");}catch(e){}})();`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className={`${outfit.variable} ${newsreader.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBoot }} />
+        <script dangerouslySetInnerHTML={{ __html: arriveBoot }} />
       </head>
       <body>
         <Providers>
