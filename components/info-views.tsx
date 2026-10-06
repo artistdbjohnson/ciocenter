@@ -278,8 +278,8 @@ export function AccessView() {
       </header>
       <p>
         {t({
-          en: "The practice says it is committed to access for people with disabilities and will help if you need assistance with the website or a document. This study keeps that commitment in view: text can scale, controls show focus, the map does not trap the page scroll, and motion respects a reduced-motion setting.",
-          pt: "A prática diz que se compromete com o acesso de pessoas com deficiência e ajuda se você precisar de apoio no site ou em um documento. Este estudo mantém esse compromisso à vista: o texto pode crescer, os controles mostram foco, o mapa não prende a rolagem da página, e o movimento respeita a redução de movimento.",
+          en: "The practice says it is committed to access for people with disabilities and will help if you need assistance with the website or a document. This study keeps that commitment in view: text can scale, controls show focus, the map does not trap the page scroll, and motion respects a reduced-motion setting. The home arrival plays once each visit and then stays still.",
+          pt: "A prática diz que se compromete com o acesso de pessoas com deficiência e ajuda se você precisar de apoio no site ou em um documento. Este estudo mantém esse compromisso à vista: o texto pode crescer, os controles mostram foco, o mapa não prende a rolagem da página, e o movimento respeita a redução de movimento. A chegada da página inicial acontece uma vez por visita e depois permanece parada.",
         })}
       </p>
       <p>

@@ -15,4 +15,4 @@ npm run dev
 
 Production build: `npm run build`.
 
-The craft vote, shelf search, color pass, and tool pass are in [docs/design-meeting.md](docs/design-meeting.md).
+The craft vote, shelf search, color pass, and tool pass are in [docs/design-meeting.md](docs/design-meeting.md). The motion vote is in [docs/motion-meeting.md](docs/motion-meeting.md).

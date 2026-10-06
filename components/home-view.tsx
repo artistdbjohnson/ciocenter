@@ -1,16 +1,44 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
 import { ClinicAtlas } from "@/components/atlas";
 import { phone, phoneHref, physicians } from "@/lib/data";
 import { useTx } from "@/lib/i18n";
 
 export function HomeView() {
   const t = useTx();
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (!root.classList.contains("cio-arrive")) return;
+    try {
+      sessionStorage.setItem("cio-arrive", "1");
+    } catch {
+      /* storage blocked: the class still comes off when the settle ends */
+    }
+    const frame = document.querySelector(".hero-frame");
+    let backup = 0;
+    const finish = () => {
+      window.clearTimeout(backup);
+      root.classList.remove("cio-arrive");
+    };
+    const onEnd: EventListener = (event) => {
+      if (!(event instanceof AnimationEvent) || event.animationName !== "cio-photo") return;
+      finish();
+    };
+    frame?.addEventListener("animationend", onEnd);
+    backup = window.setTimeout(finish, 1200);
+    return () => {
+      frame?.removeEventListener("animationend", onEnd);
+      window.clearTimeout(backup);
+    };
+  }, []);
+
   return (
     <>
       <section className="wrap hero">
-        <div>
+        <div className="hero-copy">
           <p className="kicker">{t({ en: "Central Indiana · since 1950", pt: "Centro de Indiana · desde 1950" })}</p>
           <h1>{t({ en: "Because life moves.", pt: "Porque a vida se move." })}</h1>
           <p className="lede">
